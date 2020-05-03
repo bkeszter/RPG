@@ -1,0 +1,5 @@
+﻿  class.c
+C:\Users\Eszter\Documents\GitHub\RPG\Project1\class.c(7,46): warning C4013: 'calloc' undefined; assuming extern returning int
+C:\Users\Eszter\Documents\GitHub\RPG\Project1\class.c(12,41): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\Eszter\Documents\GitHub\RPG\Project1\class.c(12,41): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  Project1.vcxproj -> C:\Users\Eszter\Documents\GitHub\RPG\Project1\Debug\Project1.exe
