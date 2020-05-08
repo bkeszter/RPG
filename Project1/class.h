@@ -19,6 +19,6 @@ typedef struct ClassStructure {
 
 ClassStructure* CreatePlayer();
 void PrintStat(ClassStructure* classstruct);
-int Fight(ClassStructure player, ClassStructure enemy);
+void Fight(ClassStructure* player, ClassStructure* enemy);
 
 #endif

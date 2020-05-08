@@ -1,5 +1,12 @@
 ﻿  class.c
-C:\Users\Eszter\Documents\GitHub\RPG\Project1\class.c(7,46): warning C4013: 'calloc' undefined; assuming extern returning int
-C:\Users\Eszter\Documents\GitHub\RPG\Project1\class.c(12,41): warning C4474: 'printf' : too many arguments passed for format string
-C:\Users\Eszter\Documents\GitHub\RPG\Project1\class.c(12,41): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+C:\Users\Eszter\Documents\GitHub\RPG\Project1\class.c(5,46): warning C4013: 'calloc' undefined; assuming extern returning int
+C:\Users\Eszter\Documents\GitHub\RPG\Project1\class.c(8,7): warning C4013: 'exit' undefined; assuming extern returning int
+C:\Users\Eszter\Documents\GitHub\RPG\Project1\class.c(15,41): warning C4474: 'printf' : too many arguments passed for format string
+C:\Users\Eszter\Documents\GitHub\RPG\Project1\class.c(15,41): message : placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+  enemies.c
+C:\Users\Eszter\Documents\GitHub\RPG\Project1\enemies.c(6,7): warning C4013: 'srand' undefined; assuming extern returning int
+C:\Users\Eszter\Documents\GitHub\RPG\Project1\enemies.c(7,31): warning C4013: 'calloc' undefined; assuming extern returning int
+C:\Users\Eszter\Documents\GitHub\RPG\Project1\enemies.c(16,15): warning C4013: 'rand' undefined; assuming extern returning int
+C:\Users\Eszter\Documents\GitHub\RPG\Project1\enemies.c(17,8): warning C4477: 'scanf' : format string '%i' requires an argument of type 'int *', but variadic argument 1 has type 'int'
+  Generating Code...
   Project1.vcxproj -> C:\Users\Eszter\Documents\GitHub\RPG\Project1\Debug\Project1.exe

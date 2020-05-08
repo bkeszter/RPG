@@ -1,12 +1,9 @@
-#include "character.h"
 #include "class.h"
+#include "enemies.h"
 
 int main() {
 
-	Charachter* karcsi = Create();
-	PrintStats(karcsi);
-	ClassStructure* class = CreatePlayer();
-	PrintStat(class);
+	ClassStructure* karcsi = CreatePlayer();
 
 	return 0;
 }

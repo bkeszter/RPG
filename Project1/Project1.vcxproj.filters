@@ -18,18 +18,18 @@
     <ClCompile Include="Source.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="character.c">
+    <ClCompile Include="class.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="class.c">
+    <ClCompile Include="enemies.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="character.h">
+    <ClInclude Include="class.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="class.h">
+    <ClInclude Include="enemies.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
