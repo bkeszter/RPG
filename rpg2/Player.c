@@ -10,17 +10,54 @@ Player* CreateP(char** palya,int hossz, int szel)
 	player->health = 3;
 	player->xkor = 1;
 	player->ykor = 1;
-
 	palya = beolvas("Text.txt",hossz,szel);
-	palya[player->xkor][player->ykor] = "O";
-	/*for (int i = 1; i < szel; ++i) {
-		for (int j = 1; j < hossz; ++j) {
-			palya[i][j] = palya[player->xkor][player->ykor];
-			palya[player->xkor][player->ykor] = "P";
-			printf("%c", player);
-			break;
-		}
-	}*/
-
+	//ezen a koordinatan inditja a 'player'-t
+	palya[player->xkor][player->ykor]='@';	
 	return player;
+}
+
+int Movement(Player* player, int xkor, int ykor, char** palya)
+{
+	palya = beolvas("Text.txt", 16, 8);
+	 xkor = player->xkor;
+	 ykor = player->ykor;
+	 if (palya[player->xkor][player->ykor] == '0') {
+		 palya[player->xkor][player->ykor] == '@';
+		 palya[xkor][ykor] == '0';
+	 }
+	return player;
+}
+
+int Input(int input, Player* player,char** palya)
+{
+	palya = beolvas("Text.txt", 16, 8);
+	switch (input) {
+	//felfele
+		input = getch();
+	case 1:
+		if (input == 'w'|| input=='W') {
+			Movement(player, player->xkor, player->ykor + 1,palya);
+		}
+		break;
+	//balra
+	case 2:
+		if (input == 'a'||input=='A') {
+			Movement(player, player->xkor - 1, player->ykor,palya);
+		}
+		break;
+	//le
+	case 3:
+		if (input == 's'||input=='S') {
+			Movement(player, player->xkor, player->ykor - 1,palya);
+		}
+		break;
+	//jobbra
+	case 4:
+		if (input == 'd'|| input=='D') {
+			Movement(player, player->xkor + 1, player->ykor,palya);
+		}
+		break;
+	
+	}
+	return input;
 }

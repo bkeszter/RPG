@@ -8,58 +8,51 @@ char** beolvas(const char* filename,int hossz, int szel)
 		printf("hibas fajl megnyitas");
 		exit(1);
 	}
-	char** palya = (char**)calloc(hossz, sizeof(char*));
+	char** palya = (char**)calloc(szel, sizeof(char*));
 	if (!palya) {
 		printf("hibas lefoglalas");
 	}
 	for (int i = 0; i < szel; ++i) {
-		palya[i] = (char*)calloc(szel, sizeof(char));
+		palya[i] = (char*)calloc(hossz, sizeof(char));
 		if (!palya[i]) {
 			printf("hibas lefoglalas");
 		}
 	}
 	for (int i = 0; i < szel; ++i) {
 		for (int j = 0; j <hossz; ++j) {
-			fscanf(fin, "%c", &palya[i][j]);
+			fscanf(fin, "%c\n", &palya[i][j]);
 			//palya[i][j] = rand() % 5;
 		}
 	}
+	return palya;
+}
 
+void Print(char** palya, int hossz, int szel)
+{
 	for (int i = 0; i < szel; ++i) {
-		//scanf("%c", palya[i]);
 		for (int j = 0; j < hossz; ++j) {
 			//keret
-			printf("%c", palya[i][j]);
-
-			if (palya[i][j] == 3) {
-				printf("x");
-			}
-
-			/*if ( i==0 || i == szel - 1 ) {
+			if (i == 0 || i == szel - 1) {
 				printf("-");
 			}
-			else if(j == 0 || j == hossz - 1) {
+			else if (j == 0 || j == hossz - 1) {
 				printf("|");
 			}
 
-			else if (i == 1 || i == szel - 2) {
-				printf(" ");
-			}
-			else if (j == 1 || j == hossz - 2) {
+			//ha 3-at lat irjon ki 'x'-et, ha 2-t 'p'-t stb...
+			if (palya[i][j] == '3') {
 				printf("x");
 			}
-			else if (i == 2 || i == szel - 3) {
-				printf(" ");
+			else if (palya[i][j] == '2') {
+				printf("P");
 			}
-			else if (j == 2 || j == hossz - 3) {
-				printf(" ");
-			}
-			else if (i == 3 || i == szel - 4) {
+			else if (palya[i][j] == '4') {
 				printf("O");
-			}	*/
+			}
+			else if (palya[i][j] == '0') {
+				printf(" ");
+			}
 		}
 		printf("\n");
 	}
-
-	return palya;
 }

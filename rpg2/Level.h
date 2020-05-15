@@ -10,5 +10,6 @@
 #include <time.h>
 
 char** beolvas(const char* filename,int hossz, int szel);
+void Print(char** palya, int hossz, int szel);
 
 #endif

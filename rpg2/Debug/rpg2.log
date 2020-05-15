@@ -1,2 +1,12 @@
-﻿  Level.c
+﻿  Enemy.c
+C:\Users\Eszter\Documents\GitHub\RPG\rpg2\Enemy.c(5,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Eszter\Documents\GitHub\RPG\rpg2\Enemy.c(21,15): warning C4244: 'function': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Eszter\Documents\GitHub\RPG\rpg2\Enemy.c(25,11): warning C4013: 'Movement' undefined; assuming extern returning int
+C:\Users\Eszter\Documents\GitHub\RPG\rpg2\Enemy.c(41,14): warning C4047: 'return': 'int' differs in levels of indirection from 'Enemy *'
+  Player.c
+C:\Users\Eszter\Documents\GitHub\RPG\rpg2\Player.c(25,38): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\Eszter\Documents\GitHub\RPG\rpg2\Player.c(26,22): warning C4553: '==': result of expression not used; did you intend '='?
+C:\Users\Eszter\Documents\GitHub\RPG\rpg2\Player.c(28,15): warning C4047: 'return': 'int' differs in levels of indirection from 'Player *'
+C:\Users\Eszter\Documents\GitHub\RPG\rpg2\Player.c(36,16): warning C4013: 'getch' undefined; assuming extern returning int
+  Generating Code...
   rpg2.vcxproj -> C:\Users\Eszter\Documents\GitHub\RPG\rpg2\Debug\rpg2.exe
