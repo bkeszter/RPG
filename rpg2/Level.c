@@ -39,12 +39,12 @@ void Print(char** palya, int hossz, int szel)
 				printf("|");
 			}
 
-			//ha 3-at lat irjon ki 'x'-et, ha 2-t 'p'-t stb...
+			//ha 3-at lat irjon ki 'x'-et, ha 2-t 's'-t stb...
 			if (palya[i][j] == '3') {
 				printf("x");
 			}
 			else if (palya[i][j] == '2') {
-				printf("P");
+				printf("S");
 			}
 			else if (palya[i][j] == '4') {
 				printf("O");

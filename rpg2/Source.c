@@ -7,27 +7,33 @@
 #define WIN32_LEAN_AND_MEAN
 
 #include <stdio.h>
+#include <Windows.h>
 
 int main() {
 
 	char** palya = beolvas("Text.txt",16,8);
-	Player* player = CreateP(palya, 16,8);
 	Print(palya, 16, 8);
-	
-	char** palya2 = beolvas("Text2.txt", 24, 12);
-	Print(palya2, 24, 12);
 
-	char** palya3 = beolvas("Text3.txt", 30, 15);
-	Print(palya3, 30, 15);
-
+	Player* player = CreateP(palya, 16, 8);
 	Enemy* enemy = CreateE(palya, 16, 8);
 
+	time_t current, start;
+	start = time(NULL);
 	int ch;
-	while (ch = getch() != 'q') {
-			Input(ch, player, palya);
-			MovementE(enemy, palya);
+	while (1) {
+		
+		if (ch = getch() == 'q') {
+			break;
+		}
+		current = time(NULL);
+
+		Input(ch, player, palya);
+		MovementE(enemy, palya);
+
+		if (current - start > 10) {
+			printf("Lejart az ido!");
+			break;
+		}
 	}
-
-
 	return 0;
 }

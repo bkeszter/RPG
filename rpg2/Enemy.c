@@ -9,9 +9,15 @@ Enemy* CreateE(char** palya, int hossz, int szel)
 		printf("hibas lefoglalas");
 		exit(1);
 	}
+	//random helyre tesz egy ellenseget
 	enemy->xkor = rand() % (szel - hossz + 1) + hossz;
 	enemy->ykor = rand() % (szel - hossz + 1) + hossz;
-	//palya[enemy->xkor][enemy->ykor] = '&';
+	
+	for (int i = 0; i < szel; ++i) {
+		for (int j = 0; j < hossz; ++j) {
+			palya[enemy->xkor][enemy->ykor] == '&';
+		}
+	}
 	
 	return enemy;
 }
@@ -19,6 +25,7 @@ Enemy* CreateE(char** palya, int hossz, int szel)
 int MovementE(Enemy* enemy, char** palya)
 {
 	srand(time(0));
+	//random mozgas
 	switch (rand()%4) {
 		//felfele
 	case 0:
