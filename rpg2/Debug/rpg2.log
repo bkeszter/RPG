@@ -1,3 +1,5 @@
 ﻿  Source.c
-C:\Users\Eszter\Documents\GitHub\RPG\rpg2\Source.c(30,13): warning C4013: 'getch' undefined; assuming extern returning int
-  rpg2.vcxproj -> C:\Users\Eszter\Documents\GitHub\RPG\rpg2\Debug\rpg2.exe
+C:\Users\PC\Documents\GitHub\RPG\rpg2\Source.c(26,13): warning C4013: 'getch' undefined; assuming extern returning int
+C:\Users\PC\Documents\GitHub\RPG\rpg2\Source.c(42,47): warning C4047: 'function': 'const char *const ' differs in levels of indirection from 'int'
+C:\Users\PC\Documents\GitHub\RPG\rpg2\Source.c(42,47): warning C4024: 'printf': different types for formal and actual parameter 1
+  rpg2.vcxproj -> C:\Users\PC\Documents\GitHub\RPG\rpg2\Debug\rpg2.exe

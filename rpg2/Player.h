@@ -12,9 +12,11 @@ typedef struct Player {
 	int health;
 	int xkor;
 	int ykor;
+	int points;
 }Player;
 
 Player* CreateP(char** palya,int hossz,int szel);
 void Movement(Player* player,int xkor,int ykor,char** palya);
 int Input(int input, Player* player,char** palya);
+int Points(char** palya, Player* player, int szel, int hossz,int xkor, int ykor);
 #endif

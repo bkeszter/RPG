@@ -15,5 +15,6 @@ typedef struct Enemy {
 }Enemy;
 
 Enemy* CreateE(char** palya, int hossz, int szel);
-int MovementE(Enemy* enemy, char** palya);
+void MovementE(Enemy* player, int xkor, int ykor, char** palya);
+int InputE(Enemy* enemy, char** palya);
 #endif

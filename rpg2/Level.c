@@ -38,7 +38,6 @@ void Print(char** palya, int hossz, int szel)
 			else if (j == 0 || j == hossz - 1) {
 				printf("|");
 			}
-
 			//ha 3-at lat irjon ki 'x'-et, ha 2-t 's'-t stb...
 			if (palya[i][j] == '3') {
 				printf("x");
@@ -54,6 +53,9 @@ void Print(char** palya, int hossz, int szel)
 			}
 			else if (palya[i][j] == '@') {
 				printf("@");
+			}
+			else if (palya[i][j] == '&') {
+				printf("&");
 			}
 		}
 		printf("\n");

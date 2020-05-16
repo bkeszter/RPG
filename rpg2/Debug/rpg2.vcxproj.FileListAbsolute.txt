@@ -1,0 +1,2 @@
+C:\Users\PC\Documents\GitHub\RPG\rpg2\Debug\rpg2.exe
+C:\Users\PC\Documents\GitHub\RPG\rpg2\Debug\rpg2.pdb
