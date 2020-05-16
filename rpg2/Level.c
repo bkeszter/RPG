@@ -52,6 +52,9 @@ void Print(char** palya, int hossz, int szel)
 			else if (palya[i][j] == '0') {
 				printf(" ");
 			}
+			else if (palya[i][j] == '@') {
+				printf("@");
+			}
 		}
 		printf("\n");
 	}

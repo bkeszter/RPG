@@ -15,6 +15,6 @@ typedef struct Player {
 }Player;
 
 Player* CreateP(char** palya,int hossz,int szel);
-int Movement(Player* player,int xkor,int ykor,char** palya);
+void Movement(Player* player,int xkor,int ykor,char** palya);
 int Input(int input, Player* player,char** palya);
 #endif

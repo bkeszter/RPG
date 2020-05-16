@@ -10,54 +10,57 @@ Player* CreateP(char** palya, int hossz, int szel)
 	player->health = 3;
 	player->xkor = 1;
 	player->ykor = 1;
-	palya = beolvas("Text.txt", hossz, szel);
+	//palya = beolvas("Text.txt", hossz, szel);
 	//ezen a koordinatan inditja a 'player'-t
 	for (int i = 0; i < szel; ++i) {
 		for (int j = 0; j < hossz; ++j) {
-			palya[player->xkor][player->ykor] == '@';
+			palya[player->xkor][player->ykor] = '@';
 		}
 	}
 	
 	return player;
 }
 
-int Movement(Player* player, int xkor, int ykor, char** palya)
+void Movement(Player* player, int xkor, int ykor, char** palya)
 {
-	palya = beolvas("Text.txt", 16, 8);
-	 xkor = player->xkor;
-	 ykor = player->ykor;
-	 if (palya[player->xkor][player->ykor] == " ") {
-		 palya[player->xkor][player->ykor] == '@';
-		 palya[xkor][ykor] == " ";
+		 
+	 printf("palya %c", palya[player->xkor][player->ykor]);
+	 if (palya[xkor][ykor] == '0') {
+		 palya[xkor][ykor] = '@';
+		 palya[player->xkor][player->ykor] = '0' ;
+		 player->xkor = xkor;
+		 player->ykor = ykor;
 	 }
-	return player;
+	
 }
 
 int Input(int input, Player* player,char** palya)
 {
-	palya = beolvas("Text.txt", 16, 8);
+	
 	//mozgas WASD billentyukkel
+
+	//input = getch();
 	switch (input) {
 	//felfele
-		input = getch();
+		
 	case 'w':
 	case 'W':
-		Movement(player, player->xkor, player->ykor + 1,palya);
+		Movement(player, player->xkor-1, player->ykor,palya);
 		break;
 	//balra
 	case 'a':
 	case 'A':
-		Movement(player, player->xkor - 1, player->ykor, palya);
+		Movement(player, player->xkor, player->ykor-1, palya);
 		break;
 	//le
 	case 's':
 	case 'S':
-		Movement(player, player->xkor, player->ykor - 1,palya);
+		Movement(player, player->xkor+1, player->ykor,palya);
 		break;
 	//jobbra
 	case 'd':
 	case 'D':
-		Movement(player, player->xkor + 1, player->ykor,palya);
+		Movement(player, player->xkor , player->ykor+1,palya);
 		break;
 	}
 	return input;
