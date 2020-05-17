@@ -2,18 +2,38 @@
 
 Enemy* CreateE(char** palya, int hossz, int szel)
 {
-	//srand(time(0));
+	srand(time(0));
 	Enemy* enemy = (Enemy*)calloc(1, sizeof(Enemy));
 	if (!enemy) {
 		printf("hibas lefoglalas");
 		exit(1);
 	}
 	//random helyre tesz egy ellenseget
-	enemy->xkor = 3;
-	enemy->ykor = 3;
+	enemy->xkor = rand() % (szel-1)+1;
+	enemy->ykor = rand() % (hossz-1)+1;
 
 	for (int i = 0; i < szel; ++i) {
 		for (int j = 0; j < hossz; ++j) {
+
+			if (enemy->xkor == 0) {
+				enemy->xkor += 1;
+			}
+			else if (enemy->xkor == szel - 1) {
+				enemy->xkor -= 1;
+			}
+			else if (enemy->ykor == 0) {
+				enemy->ykor += 1;
+			}
+			else if (enemy->ykor == hossz - 1) {
+				enemy->ykor -= 1;
+			}
+			if (palya[enemy->xkor][enemy->ykor] == '@' || palya[enemy->xkor][enemy->ykor] == '3') {
+				enemy->xkor += 1;
+				enemy->ykor += 1;
+			}
+			else if (palya[enemy->xkor][enemy->ykor] == '4') {
+				enemy->ykor -= 1;
+			}
 			palya[enemy->xkor][enemy->ykor] = '&';
 		}
 	}
@@ -23,7 +43,6 @@ Enemy* CreateE(char** palya, int hossz, int szel)
 
 void MovementE(Enemy* enemy, int xkor, int ykor, char** palya)
 {
-	printf("palya %c", palya[enemy->xkor][enemy->ykor]);
 	if (palya[xkor][ykor] == '0') {
 		palya[xkor][ykor] = '&';
 		palya[enemy->xkor][enemy->ykor] = '0';

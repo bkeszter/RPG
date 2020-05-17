@@ -7,7 +7,7 @@ Player* CreateP(char** palya, int hossz, int szel)
 		printf("hibas lefoglalas");
 		exit(1);
 	}
-	player->health = 3;
+	player->health = 1;
 	player->points = 0;
 	player->xkor = 1;
 	player->ykor = 1;
@@ -33,14 +33,18 @@ void Movement(Player* player, int xkor, int ykor, char** palya)
 	 else if (palya[xkor][ykor] == '3' || palya[xkor][ykor]=='&') {
 		 player->health -= 1;
 	 }
+	 else if (palya[xkor][ykor] == '2') {
+		 palya[xkor][ykor] = '@';
+		 palya[player->xkor][player->ykor] = '0';
+		 player->xkor = xkor;
+		 player->ykor = ykor;
+		 player->points++;
+	 }
 }
 
 int Input(int input, Player* player,char** palya)
 {
-	
 	//mozgas WASD billentyukkel
-
-	//input = getch();
 	switch (input) {
 	//felfele
 		
@@ -67,18 +71,18 @@ int Input(int input, Player* player,char** palya)
 	return input;
 }
 
-int Points(char** palya, Player* player,int szel, int hossz,int xkor,int ykor)
+int Points(char** palya, Player* player, int hossz, int szel)
 {
-	Player* temp = CreateP(palya, szel, hossz);
-	if (palya[xkor][ykor] == '2') {
-		player->points += 1;
+	Player* temp = CreateP(palya, hossz, szel);
+	for (int i = 0; i < szel; ++i) {
+		for (int j = 0; j < hossz; ++ j) {
+			if (palya[i][j] == '4') {
+				temp->points += player->points;
+				player->points = 0;
+			}
+		}
 	}
-	else if (palya[xkor][ykor] == '4') {
-		temp->points += player->points;
-		player->points = 0;
-	}
-
-
-	printf("%i", temp->points);
-	return temp->points;
+	player->points= temp->points;
+	printf("%i\n", player->points);
+	return player->points;
 }

@@ -8,8 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <Windows.h>
 
 char** beolvas(const char* filename,int hossz, int szel);
 void Print(char** palya, int hossz, int szel);
-
 #endif

@@ -2,7 +2,6 @@
 
 char** beolvas(const char* filename,int hossz, int szel)
 {
-	//srand(time(0));
 	FILE* fin = fopen(filename, "r");
 	if (!fin) {
 		printf("hibas fajl megnyitas");
@@ -21,7 +20,6 @@ char** beolvas(const char* filename,int hossz, int szel)
 	for (int i = 0; i < szel; ++i) {
 		for (int j = 0; j <hossz; ++j) {
 			fscanf(fin, "%c\n", &palya[i][j]);
-			//palya[i][j] = rand() % 5;
 		}
 	}
 	return palya;
@@ -43,7 +41,7 @@ void Print(char** palya, int hossz, int szel)
 				printf("x");
 			}
 			else if (palya[i][j] == '2') {
-				printf("S");
+				printf("#");
 			}
 			else if (palya[i][j] == '4') {
 				printf("O");
