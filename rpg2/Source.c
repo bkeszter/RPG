@@ -40,7 +40,7 @@ int main() {
 		Print(palya, 16, 8);
 		Sleep(200);
 
-		if (current - start > 10) {
+		if (current - start > 15) {
 			system("CLS");
 			printf("Lejart az ido!\n\nA megszerzett sajtok szama: ");
 			Points(palya, player, 16, 8);
@@ -108,7 +108,7 @@ int main() {
 		system("CLS");
 		Print(palya, 30, 15);
 		Sleep(200);
-		if (current - start > 20) {
+		if (current - start > 30) {
 			system("CLS");
 			printf("Lejart az ido!\n\nA megszerzett sajtok szama: ");
 			Points(palya, player, 30,15);
