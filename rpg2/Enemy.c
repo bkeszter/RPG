@@ -15,6 +15,7 @@ Enemy* CreateE(char** palya, int hossz, int szel)
 	for (int i = 0; i < szel; ++i) {
 		for (int j = 0; j < hossz; ++j) {
 
+			//ne tegye a falra az ellensegeket
 			if (enemy->xkor == 0) {
 				enemy->xkor += 1;
 			}
@@ -27,10 +28,12 @@ Enemy* CreateE(char** palya, int hossz, int szel)
 			else if (enemy->ykor == hossz - 1) {
 				enemy->ykor -= 1;
 			}
+			//ne a jatekosra vagy a tuskekre tegye az ellensegeket
 			if (palya[enemy->xkor][enemy->ykor] == '@' || palya[enemy->xkor][enemy->ykor] == '3') {
 				enemy->xkor += 1;
 				enemy->ykor += 1;
 			}
+			//ne az egerlyukra tegye az ellensegeket
 			else if (palya[enemy->xkor][enemy->ykor] == '4') {
 				enemy->ykor -= 1;
 			}
@@ -43,6 +46,7 @@ Enemy* CreateE(char** palya, int hossz, int szel)
 
 void MovementE(Enemy* enemy, int xkor, int ykor, char** palya)
 {
+	//csak ures helyre lephet
 	if (palya[xkor][ykor] == '0') {
 		palya[xkor][ykor] = '&';
 		palya[enemy->xkor][enemy->ykor] = '0';

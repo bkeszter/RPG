@@ -7,7 +7,7 @@ Player* CreateP(char** palya, int hossz, int szel)
 		printf("hibas lefoglalas");
 		exit(1);
 	}
-	player->health = 1;
+	player->health = 2;
 	player->points = 0;
 	player->xkor = 1;
 	player->ykor = 1;
@@ -23,16 +23,18 @@ Player* CreateP(char** palya, int hossz, int szel)
 
 void Movement(Player* player, int xkor, int ykor, char** palya)
 {
-	 //printf("palya %c", palya[player->xkor][player->ykor]);
+	//ures helyre lephet csak
 	 if (palya[xkor][ykor] == '0') {
 		 palya[xkor][ykor] = '@';
 		 palya[player->xkor][player->ykor] = '0' ;
 		 player->xkor = xkor;
 		 player->ykor = ykor;
 	 }
+	 //ha utkozik ellenseggel vagy csapdaval, levon az eletebol
 	 else if (palya[xkor][ykor] == '3' || palya[xkor][ykor]=='&') {
 		 player->health -= 1;
 	 }
+	 //a sajtot felveszi
 	 else if (palya[xkor][ykor] == '2') {
 		 palya[xkor][ykor] = '@';
 		 palya[player->xkor][player->ykor] = '0';
@@ -73,6 +75,7 @@ int Input(int input, Player* player,char** palya)
 
 int Points(char** palya, Player* player, int hossz, int szel)
 {
+	//pontok leadasa
 	Player* temp = CreateP(palya, hossz, szel);
 	for (int i = 0; i < szel; ++i) {
 		for (int j = 0; j < hossz; ++ j) {
